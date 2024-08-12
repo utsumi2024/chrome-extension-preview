@@ -1,22 +1,16 @@
 {
   "manifest_version": 3,
   "name": "Modal Link Opener",
-  "version": "1.0",
+  "version": "2.0",
   "description": "Open URLs in a modal when Shift+Clicking",
-  "permissions": [
-    "storage"
-  ],
+  "permissions": [],
+  "background": {
+    "service_worker": "background.js"
+  },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["content.js", "bootstraps/bootstrap.bundle.min.js"],
-      "css": ["bootstraps/bootstrap.min.css"]
-    }
-  ],
-  "web_accessible_resources": [
-    {
-      "resources": ["Elements/model.html"],
-      "matches": ["<all_urls>"]
+      "js": ["content.js"]
     }
   ]
 }
