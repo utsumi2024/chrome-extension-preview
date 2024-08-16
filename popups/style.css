@@ -1,0 +1,10 @@
+/* <!-- 配置 --> */
+.row 
+{
+    display: flex;
+}
+
+.row > *
+{
+    margin-left: 1rem;
+}

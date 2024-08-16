@@ -1,6 +1,6 @@
 document.addEventListener('click', function (event) {
   if (event.shiftKey) {
-    const anchor = event.target.closest("a") 
+    const anchor = event.target.closest("a")
     if (anchor !== null) {
       if (anchor.tagName === 'A') {
         if (anchor.href) {
@@ -9,7 +9,10 @@ document.addEventListener('click', function (event) {
           // URLをアンカーから取得
           const url = anchor.href
 
-          chrome.runtime.sendMessage({ url: url })
+          chrome.storage.local.get(['ModalSizeOption'], (values) => {
+            chrome.runtime.sendMessage({ url: url, ModalSizeOption: values.ModalSizeOption ?? 'normal' })
+          })
+
         }
       }
     }

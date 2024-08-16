@@ -1,9 +1,12 @@
 {
   "manifest_version": 3,
   "name": "Modal Link Opener",
-  "version": "2.1",
+  "version": "2.2",
   "description": "Open URLs in a modal when Shift+Clicking",
-  "permissions": [],
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popups/popup.html"
+  },
   "background": {
     "service_worker": "background.js"
   },
